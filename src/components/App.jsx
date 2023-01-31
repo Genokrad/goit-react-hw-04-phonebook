@@ -12,7 +12,7 @@ const LOCAL_KEY = 'LOCALKEY';
 
 export function App() {
   const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem(LOCAL_KEY)) || []
+    () => JSON.parse(localStorage.getItem(LOCAL_KEY)) || []
   );
   const [filter, setFilter] = useState('');
 
